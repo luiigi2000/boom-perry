@@ -38,6 +38,6 @@ func _on_parry_margin_timeout() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if not parry_margin.is_stopped():
-		linear_velocity *= direction 
+		linear_velocity = linear_velocity.normalized() * 2000 
 		missed_parry = false
 		parry_margin.stop()
