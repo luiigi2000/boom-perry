@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dob171gm6muro"]
+
+[ext_resource type="PackedScene" uid="uid://dqpgxrnd36nc6" path="res://Scenes/RigidBodies/boomerang.tscn" id="1_jjgbg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgbg"]
+size = Vector2(141, 658)
+
+[node name="Main" type="Node2D" unique_id=1860296884]
+position = Vector2(5, -6)
+
+[node name="Boomerang" parent="." unique_id=1919967858 instance=ExtResource("1_jjgbg")]
+position = Vector2(338, 258)
+
+[node name="TempMap" type="Node2D" parent="." unique_id=152736135]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1093926646]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1144014338]
+position = Vector2(-36.5, 319)
+shape = SubResource("RectangleShape2D_jjgbg")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=598193394]
+position = Vector2(1260, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1366388811]
+position = Vector2(-36.5, 319)
+shape = SubResource("RectangleShape2D_jjgbg")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=418233413]
+position = Vector2(970.00006, 646)
+scale = Vector2(9.11554, 0.26731908)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=664493247]
+position = Vector2(-36.5, 319)
+shape = SubResource("RectangleShape2D_jjgbg")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1168551092]
+position = Vector2(930.00006, -165)
+scale = Vector2(9.11554, 0.26731908)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=2083279838]
+position = Vector2(-36.5, 319)
+shape = SubResource("RectangleShape2D_jjgbg")
