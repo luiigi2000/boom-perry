@@ -14,11 +14,10 @@ func _ready() -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if parry_debounce and event.is_action_pressed("parry"):
-		parry_debounce = false
 		parry_margin.start()
 		parry_debounce = false
-
-
+	elif not parry_debounce and event.is_action_pressed("parry") and parry_margin.is_stopped():
+		negate_speed()
 
 
 func _on_parry_margin_timeout() -> void:
@@ -36,7 +35,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if not parry_margin.is_stopped():
-		SPEED = wrap(SPEED,0,10000)
+		SPEED = wrap(SPEED,0,5000)
 		linear_velocity = linear_velocity.normalized() * SPEED
 		increase_multiplier_count(true)
 		missed_parry = false
@@ -55,7 +54,6 @@ func increase_multiplier_count(increase):
 			multiplier_count = 5
 			SPEED *= 2
 			linear_velocity = linear_velocity.normalized() * SPEED
-			print("SPEEED")
 	else:
 		multiplier_count = 5
 
