@@ -2,16 +2,12 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlstmf2b7muq6"
-path="res://.godot/imported/images (2).jpg-f77c6bb94d7213dd916b9feab3a7c362.ctex"
-metadata={
-"vram_texture": false
-}
+uid="uid://bhkvih3s5pqat"
+valid=false
 
 [deps]
 
-source_file="res://addons/images (2).jpg"
-dest_files=["res://.godot/imported/images (2).jpg-f77c6bb94d7213dd916b9feab3a7c362.ctex"]
+source_file="res://addons/craftpix-net-917640-free-underwater-world-pixel-art-backgrounds/__MACOSX/background 3/._5.png"
 
 [params]
 
@@ -26,6 +22,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
+mipmaps/preserve_alpha_test_coverage=false
+mipmaps/alpha_test_threshold=0.5
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0

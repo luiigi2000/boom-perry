@@ -1,15 +1,64 @@
 [gd_scene format=3 uid="uid://dqpgxrnd36nc6"]
 
 [ext_resource type="Script" uid="uid://dm0hi2pw4uyqy" path="res://Scripts/boomerang.gd" id="1_l2u2a"]
+[ext_resource type="Texture2D" uid="uid://ck3vsi0wptl2u" path="res://Assets/craftpix-net-800891-octopus-jellyfish-shark-and-turtle-free-sprite-pixel-art/6/Walk.png" id="2_svqxw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l2u2a"]
 friction = 0.0
 bounce = 1.0
 
-[sub_resource type="SphereMesh" id="SphereMesh_7dm0k"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_ig7tw"]
 radius = 8.69227
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dynqy"]
+atlas = ExtResource("2_svqxw")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgid2"]
+atlas = ExtResource("2_svqxw")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsu57"]
+atlas = ExtResource("2_svqxw")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qppct"]
+atlas = ExtResource("2_svqxw")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bk1w"]
+atlas = ExtResource("2_svqxw")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqr4f"]
+atlas = ExtResource("2_svqxw")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yedeg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dynqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgid2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsu57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qppct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bk1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqr4f")
+}],
+"loop": 1,
+"name": &"Push",
+"speed": 10.0
+}]
 
 [node name="Boomerang" type="RigidBody2D" unique_id=1919967858]
 collision_mask = 3
@@ -19,18 +68,16 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_l2u2a")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1118304701]
-scale = Vector2(50, 50)
-mesh = SubResource("SphereMesh_7dm0k")
-
 [node name="Area2D" type="Area2D" parent="." unique_id=1491704440]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1802719113]
-scale = Vector2(3, 3)
+position = Vector2(-14, 0)
+scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_ig7tw")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=98105250]
-scale = Vector2(3, 3)
+position = Vector2(-14, 0)
+scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_ig7tw")
 
 [node name="ParryMargin" type="Timer" parent="." unique_id=2081744366]
@@ -38,6 +85,14 @@ wait_time = 0.1
 
 [node name="ResetTimer" type="Timer" parent="." unique_id=1330883421]
 wait_time = 0.1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1810406682]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_yedeg")
+animation = &"Push"
+autoplay = "Push"
+frame = 5
+frame_progress = 1.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

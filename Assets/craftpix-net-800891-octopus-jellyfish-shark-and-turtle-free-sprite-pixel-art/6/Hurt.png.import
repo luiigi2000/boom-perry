@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtdv8bvhblnvs"
-path="res://.godot/imported/images (3).jpg-40ef65eb0ad0dbac098274582da77183.ctex"
+uid="uid://bfthru8d55shu"
+path="res://.godot/imported/Hurt.png-9593f1158fda3976789ede90f6a914c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/images (3).jpg"
-dest_files=["res://.godot/imported/images (3).jpg-40ef65eb0ad0dbac098274582da77183.ctex"]
+source_file="res://Assets/craftpix-net-800891-octopus-jellyfish-shark-and-turtle-free-sprite-pixel-art/6/Hurt.png"
+dest_files=["res://.godot/imported/Hurt.png-9593f1158fda3976789ede90f6a914c2.ctex"]
 
 [params]
 
@@ -26,6 +26,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
+mipmaps/preserve_alpha_test_coverage=false
+mipmaps/alpha_test_threshold=0.5
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0

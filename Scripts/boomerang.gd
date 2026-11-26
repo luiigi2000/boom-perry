@@ -9,6 +9,7 @@ var multiplier_count = 5
 @onready var cam = 	get_tree().get_first_node_in_group("main_camera")
 @onready var score = 	get_tree().get_first_node_in_group("score")
 var slow_debounce = false
+var parried_key
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#print(get_global_mouse_position()-global_position)
@@ -16,13 +17,19 @@ func _ready() -> void:
 
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if parry_debounce and event.is_action_pressed("parry"):
+	if event is InputEventKey and event.pressed and parry_debounce:
+		parried_key = OS.get_keycode_string(event.keycode)
 		parry_margin.start()
 		parry_debounce = false
-		end_slow_mow()
-	elif not parry_debounce and event.is_action_pressed("parry") and parry_margin.is_stopped():
+	elif event is InputEventKey and event.pressed and not parry_debounce and parry_margin.is_stopped():
 		negate_speed()
-		end_slow_mow()
+	#if parry_debounce and event.is_action_pressed("parry"):
+		#parry_margin.start()
+		#parry_debounce = false
+		#end_slow_mow()
+	#elif not parry_debounce and event.is_action_pressed("parry") and parry_margin.is_stopped():
+		#negate_speed()
+		#end_slow_mow()
 
 
 func _on_parry_margin_timeout() -> void:
@@ -32,13 +39,22 @@ func _on_parry_margin_timeout() -> void:
 	parry_margin.stop()
 	
 func _process(delta: float) -> void:
-		if slow_debounce:
-			cam.global_position = cam.global_position.lerp(position, .1)
-			cam.zoom = cam.zoom.lerp(Vector2(1.5,1.5),.1)
-		else:
-			cam.global_position = cam.global_position.lerp(Vector2(1152/2,648/2), .1)
-			cam.zoom = cam.zoom.lerp(Vector2(1,1),.1)
-		score.text = "[wave] +"+ str(SPEED) + "[/wave]"
+	cam.position = lerp(cam.position,position,.001)
+	if position.x > get_viewport_rect().size.x/2:
+		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation,3*PI/2,.1)
+	elif position.x < get_viewport_rect().size.x/2:
+		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation,PI/2,.1)
+	if position.y > get_viewport_rect().size.y/2:
+		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation,2*PI,.1)
+	elif position.x < get_viewport_rect().size.y/2:
+		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation,PI,.1)
+	if slow_debounce:
+		cam.global_position = cam.global_position.lerp(position, .1)
+		cam.zoom = cam.zoom.lerp(Vector2(1.5,1.5),.1)
+	else:
+		cam.global_position = cam.global_position.lerp(Vector2(1152/2,648/2), .1)
+		cam.zoom = cam.zoom.lerp(Vector2(1,1),.1)
+	score.text = "[wave] +"+ str(SPEED) + "[/wave]"
 		
 func _physics_process(delta: float) -> void:
 	var bodies = get_colliding_bodies()
@@ -48,13 +64,14 @@ func _physics_process(delta: float) -> void:
 		$ResetTimer.stop()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if not parry_margin.is_stopped():
+	if not parry_margin.is_stopped() and body.get_meta("ParryKey") == parried_key:
 		linear_velocity = linear_velocity.normalized() * SPEED
 		increase_multiplier_count(true)
 		missed_parry = false
 	else:
 		negate_speed()
 	parry_debounce = true
+	parried_key = ""
 		
 func negate_speed():
 	SPEED -= 10

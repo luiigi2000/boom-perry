@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://c3nuopyyt2kvv"]
+[gd_scene format=3 uid="uid://wsxm3jdk8gwn"]
 
 [ext_resource type="Script" uid="uid://dkjh7f727rit1" path="res://Scripts/obstacle.gd" id="1_8l1dc"]
-[ext_resource type="Texture2D" uid="uid://dtdv8bvhblnvs" path="res://addons/images (3).jpg" id="2_mwh3f"]
-[ext_resource type="Texture2D" uid="uid://dlstmf2b7muq6" path="res://addons/images (2).jpg" id="3_mwh3f"]
+[ext_resource type="Texture2D" uid="uid://dtdv8bvhblnvs" path="res://Assets/images (3).jpg" id="2_mwh3f"]
+[ext_resource type="Texture2D" uid="uid://dlstmf2b7muq6" path="res://Assets/images (2).jpg" id="3_mwh3f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcbvg"]
 size = Vector2(54, 54)

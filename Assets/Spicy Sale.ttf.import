@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://h6gvt53enksi"
-path="res://.godot/imported/Spicy Sale.ttf-653bf9262508431833aa08c3576418d5.fontdata"
+path="res://.godot/imported/Spicy Sale.ttf-d0ec839bb2ff18d86253596df49fbe72.fontdata"
 
 [deps]
 
-source_file="res://addons/Spicy Sale.ttf"
-dest_files=["res://.godot/imported/Spicy Sale.ttf-653bf9262508431833aa08c3576418d5.fontdata"]
+source_file="res://Assets/Spicy Sale.ttf"
+dest_files=["res://.godot/imported/Spicy Sale.ttf-d0ec839bb2ff18d86253596df49fbe72.fontdata"]
 
 [params]
 

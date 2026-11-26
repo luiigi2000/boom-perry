@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bf6c3tqsykbye"]
 
-[ext_resource type="FontFile" uid="uid://h6gvt53enksi" path="res://addons/Spicy Sale.ttf" id="1_0f7a8"]
+[ext_resource type="FontFile" uid="uid://h6gvt53enksi" path="res://Assets/Spicy Sale.ttf" id="1_0f7a8"]
 
 [node name="Score" type="RichTextLabel" unique_id=1692588670]
 offset_left = 1027.0
