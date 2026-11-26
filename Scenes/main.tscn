@@ -2,18 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bq456bqxe402q" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dqpgxrnd36nc6" path="res://Scenes/RigidBodies/boomerang.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://bf6c3tqsykbye" path="res://Scenes/score.tscn" id="3_8gbba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgbg"]
 size = Vector2(141, 658)
 
 [node name="Main" type="Node2D" unique_id=1860296884]
-position = Vector2(5, -6)
 script = ExtResource("1_bo1nx")
 
 [node name="Boomerang" parent="." unique_id=1919967858 instance=ExtResource("1_jjgbg")]
 position = Vector2(338, 258)
 
 [node name="TempMap" type="Node2D" parent="." unique_id=152736135]
+position = Vector2(-33, -9)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TempMap" unique_id=1093926646]
 
@@ -46,5 +47,14 @@ shape = SubResource("RectangleShape2D_jjgbg")
 
 [node name="SpawnObstacle" type="Timer" parent="." unique_id=66086657]
 autostart = true
+
+[node name="MainCamera" type="Camera2D" parent="." unique_id=1016077565 groups=["main_camera"]]
+position = Vector2(575, 324)
+
+[node name="Score" parent="." unique_id=1692588670 groups=["score"] instance=ExtResource("3_8gbba")]
+offset_left = 972.0
+offset_top = 18.0
+offset_right = 1292.0
+offset_bottom = 102.0
 
 [connection signal="timeout" from="SpawnObstacle" to="." method="_on_spawn_obstacle_timeout"]

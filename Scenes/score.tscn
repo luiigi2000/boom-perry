@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bf6c3tqsykbye"]
+
+[ext_resource type="FontFile" uid="uid://h6gvt53enksi" path="res://addons/Spicy Sale.ttf" id="1_0f7a8"]
+
+[node name="Score" type="RichTextLabel" unique_id=1692588670]
+offset_left = 1027.0
+offset_top = 9.0
+offset_right = 1347.0
+offset_bottom = 93.0
+theme_override_fonts/normal_font = ExtResource("1_0f7a8")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[wave]+500[/wave]"

@@ -7,7 +7,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcbvg"]
 size = Vector2(54, 54)
 
-[node name="Obstacle" type="RigidBody2D" unique_id=1442991332]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ih8qp"]
+radius = 141.05673
+
+[node name="Obstacle" type="RigidBody2D" unique_id=1442991332 groups=["SlowDown"]]
 collision_mask = 2
 gravity_scale = 0.1
 lock_rotation = true
@@ -21,3 +24,8 @@ shape = SubResource("RectangleShape2D_qcbvg")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1141032765]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_mwh3f")
+
+[node name="SlowDownArea" type="Area2D" parent="." unique_id=1039602244 groups=["SlowDown"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlowDownArea" unique_id=1352800947]
+shape = SubResource("CircleShape2D_ih8qp")
