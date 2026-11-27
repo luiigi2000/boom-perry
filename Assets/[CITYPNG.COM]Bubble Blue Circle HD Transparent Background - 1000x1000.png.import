@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlstmf2b7muq6"
-path="res://.godot/imported/images (2).jpg-eed544b07c2c4f2ec23799f19adf1c90.ctex"
+uid="uid://crdtfuvvxqgfc"
+path="res://.godot/imported/[CITYPNG.COM]Bubble Blue Circle HD Transparent Background - 1000x1000.png-2cbab626d412184875ed9b01b29d1505.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/images (2).jpg"
-dest_files=["res://.godot/imported/images (2).jpg-eed544b07c2c4f2ec23799f19adf1c90.ctex"]
+source_file="res://Assets/[CITYPNG.COM]Bubble Blue Circle HD Transparent Background - 1000x1000.png"
+dest_files=["res://.godot/imported/[CITYPNG.COM]Bubble Blue Circle HD Transparent Background - 1000x1000.png-2cbab626d412184875ed9b01b29d1505.ctex"]
 
 [params]
 
@@ -26,8 +26,6 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1
-mipmaps/preserve_alpha_test_coverage=false
-mipmaps/alpha_test_threshold=0.5
 roughness/mode=0
 roughness/src_normal=""
 process/channel_remap/red=0

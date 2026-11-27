@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dqpgxrnd36nc6" path="res://Scenes/RigidBodies/boomerang.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://bf6c3tqsykbye" path="res://Scenes/score.tscn" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://681x6ta8cilb" path="res://Assets/craftpix-net-917640-free-underwater-world-pixel-art-backgrounds/background 1/orig_big.png" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://dltiy2eydymhj" path="res://bubble_image.tscn" id="5_kry3j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jjgbg"]
 size = Vector2(141, 658)
@@ -65,5 +66,7 @@ offset_left = 972.0
 offset_top = 18.0
 offset_right = 1292.0
 offset_bottom = 102.0
+
+[node name="BubbleImage" parent="." unique_id=417520553 instance=ExtResource("5_kry3j")]
 
 [connection signal="timeout" from="SpawnObstacle" to="." method="_on_spawn_obstacle_timeout"]

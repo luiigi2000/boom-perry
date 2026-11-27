@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bbmxnwkgxcegs"]
+
+[ext_resource type="Script" uid="uid://cq26n3jua0owk" path="res://bubble.gd" id="1_y2db8"]
+[ext_resource type="Texture2D" uid="uid://crdtfuvvxqgfc" path="res://Assets/[CITYPNG.COM]Bubble Blue Circle HD Transparent Background - 1000x1000.png" id="2_4a276"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s5j35"]
+radius = 22.090721
+
+[node name="Bubble" type="Area2D" unique_id=1099878361]
+script = ExtResource("1_y2db8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2085323079]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_4a276")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1817758713]
+shape = SubResource("CircleShape2D_s5j35")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

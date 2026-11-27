@@ -63,6 +63,7 @@ animations = [{
 [node name="Boomerang" type="RigidBody2D" unique_id=1919967858]
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_l2u2a")
+gravity_scale = 0.5
 continuous_cd = 2
 contact_monitor = true
 max_contacts_reported = 1
@@ -81,7 +82,7 @@ scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_ig7tw")
 
 [node name="ParryMargin" type="Timer" parent="." unique_id=2081744366]
-wait_time = 0.1
+wait_time = 0.2
 
 [node name="ResetTimer" type="Timer" parent="." unique_id=1330883421]
 wait_time = 0.1

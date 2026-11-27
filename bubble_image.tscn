@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dltiy2eydymhj"]
+
+[ext_resource type="Script" uid="uid://c8k8mquma26rw" path="res://bubble_image.gd" id="1_6vaub"]
+[ext_resource type="Texture2D" uid="uid://bbg75modqko6r" path="res://Assets/clownfish-removebg-preview.png" id="2_jveic"]
+
+[node name="BubbleImage" type="Sprite2D" unique_id=417520553]
+script = ExtResource("1_6vaub")
+meshes = Array[Texture2D]([ExtResource("2_jveic")])

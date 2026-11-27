@@ -8,4 +8,5 @@ func _ready() -> void:
 	$MainCamera.make_current()
 	
 func _process(delta: float) -> void:
-	pass
+	if int($Score.text) <= 0:
+		get_tree().reload_current_scene()

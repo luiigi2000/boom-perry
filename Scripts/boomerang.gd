@@ -3,7 +3,7 @@ extends RigidBody2D
 @onready var parry_margin = $ParryMargin
 var missed_parry = true
 var parry_debounce = true
-var SPEED = 2000
+var SPEED = 1000
 var direction: Vector2
 var multiplier_count = 5
 @onready var cam = 	get_tree().get_first_node_in_group("main_camera")
@@ -17,6 +17,8 @@ func _ready() -> void:
 
 	
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("blast"):
+		apply_central_impulse(-$AnimatedSprite2D.transform.y * 500)
 	if event is InputEventKey and event.pressed and parry_debounce:
 		parried_key = OS.get_keycode_string(event.keycode)
 		parry_margin.start()
